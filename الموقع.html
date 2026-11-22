@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الروضة السابعة تحتفي باليوم العالمي للطفل 🌟</title>
+  <!-- خطوط عربية واضحة وجميلة (Cairo و Tajawal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <!-- تحميل Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Cairo', 'Tajawal', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FFFDF7',
+            sunny: '#FFD166',
+            coral: '#FF6B6B',
+            skyplay: '#38BDF8',
+            mint: '#34D399',
+            grape: '#7C3AED',
+          },
+          boxShadow: {
+            playful: '0 10px 0 rgba(124, 58, 237, 0.12), 0 18px 32px rgba(30, 41, 59, 0.08)',
+            btn3d: '0 5px 0 rgba(0, 0, 0, 0.18)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: #FFFDF7;
+      background-image:
+        radial-gradient(circle at 10% 12%, rgba(56, 189, 248, 0.18) 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(255, 107, 107, 0.16) 0%, transparent 32%),
+        radial-gradient(circle at 85% 55%, rgba(255, 209, 102, 0.22) 0%, transparent 34%),
+        radial-gradient(circle at 14% 78%, rgba(52, 211, 153, 0.18) 0%, transparent 32%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(4deg); }
+    }
+
+    @keyframes wiggleGift {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      15% { transform: rotate(-7deg) scale(1.04); }
+      30% { transform: rotate(7deg) scale(1.05); }
+      45% { transform: rotate(-5deg) scale(1.03); }
+      60% { transform: rotate(5deg) scale(1.02); }
+      75% { transform: rotate(-2deg) scale(1.01); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.84) translateY(12px); }
+      75% { opacity: 1; transform: scale(1.02) translateY(-2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes confettiFall {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx, 0px), var(--ty, 220px)) rotate(var(--rot, 360deg)) scale(0.55);
+      }
+    }
+
+    .animate-float {
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    .animate-wiggle {
+      animation: wiggleGift 2.5s ease-in-out infinite;
+    }
+
+    .animate-pop {
+      animation: popIn 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .confetti-piece {
+      position: fixed;
+      pointer-events: none;
+      z-index: 80;
+      animation: confettiFall var(--dur, 1.2s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .btn-3d {
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+    }
+
+    .btn-3d:active {
+      transform: translateY(4px);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="text-slate-900 selection:bg-amber-200">
+
+  <!-- طبقة القصاصات الملونة المتطايرة -->
+  <div id="confetti-layer" aria-hidden="true"></div>
+
+  <!-- شريط التنقل العلوي -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b-2 border-amber-200/80 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <!-- شعار الروضة السابعة -->
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 flex items-center justify-center text-2xl shadow-sm border-2 border-white group-hover:scale-105 transition-transform">
+          🏫
+        </div>
+        <div>
+          <span class="block font-black text-base sm:text-lg text-purple-900 leading-tight">
+            الروضة السابعة
+          </span>
+          <span class="block text-xs font-bold text-amber-700">
+            اليوم العالمي للطفل 🌟
+          </span>
+        </div>
+      </a>
+
+      <!-- روابط سريعة للأقسام على الشاشات المتوسطة والكبيرة -->
+      <nav aria-label="التنقل السريع" class="hidden md:flex items-center gap-2 text-sm font-extrabold text-slate-700">
+        <a href="#rights-section" class="px-3 py-1.5 rounded-xl hover:bg-purple-50 hover:text-purple-800 transition">حقوق الطفل</a>
+        <a href="#gallery-section" class="px-3 py-1.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition">ألبوم الاحتفال</a>
+        <a href="#messages-section" class="px-3 py-1.5 rounded-xl hover:bg-rose-50 hover:text-rose-800 transition">الأطفال والأهالي</a>
+        <a href="#quiz-section" class="px-3 py-1.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">مسابقة الأبطال</a>
+      </nav>
+
+      <!-- عداد النجوم وزر الصوت -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <div
+          class="flex items-center gap-1.5 bg-amber-100 border-2 border-amber-300 text-amber-950 px-3 py-1.5 rounded-full font-black text-sm sm:text-base shadow-sm"
+          title="نجومك السعيدة"
+        >
+          <span class="text-base sm:text-lg" aria-hidden="true">⭐</span>
+          <span id="star-count">0</span>
+          <span class="hidden sm:inline">نجمة</span>
+        </div>
+
+        <button
+          id="sound-toggle-btn"
+          type="button"
+          class="btn-3d flex items-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white font-extrabold px-3.5 py-2 rounded-full text-xs sm:text-sm shadow-btn3d cursor-pointer"
+          aria-pressed="false"
+          aria-label="تبديل المؤثرات الصوتية"
+        >
+          <span id="sound-icon" class="text-base sm:text-lg" aria-hidden="true">🔊</span>
+          <span id="sound-label" class="hidden sm:inline">الصوت</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="max-w-6xl mx-auto px-4 pt-6 pb-16 space-y-12 sm:space-y-16">
+
+    <!-- 1. لافتة احتفال الروضة السابعة باليوم العالمي للطفل -->
+    <section
+      aria-labelledby="hero-heading"
+      class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-purple-700 via-indigo-600 to-sky-500 text-white p-6 sm:p-10 shadow-playful border-4 border-white"
+    >
+      <!-- عناصر زخرفية طفولية عائمة -->
+      <div class="hidden sm:block absolute top-4 left-8 text-5xl opacity-30 animate-float pointer-events-none select-none">🎈</div>
+      <div class="hidden sm:block absolute bottom-4 left-24 text-5xl opacity-25 animate-float pointer-events-none select-none" style="animation-delay: 1.2s;">🌈</div>
+      <div class="hidden md:block absolute top-1/2 left-6 text-4xl opacity-25 animate-float pointer-events-none select-none" style="animation-delay: 0.6s;">✨</div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
+        <!-- النص الترحيبي -->
+        <div class="lg:col-span-8 text-center lg:text-right space-y-4">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold border border-white/30">
+            <span>🎉</span>
+            <span>احتفال مميز في بيئة آمنة ومبدعة</span>
+          </div>
+
+          <h1 id="hero-heading" class="text-3xl sm:text-5xl font-black leading-tight drop-shadow-sm">
+            الروضة السابعة تحتفي باليوم العالمي للطفل 🌟
+          </h1>
+
+          <p class="text-base sm:text-xl font-bold text-white/95 leading-relaxed">
+            في <span class="underline decoration-amber-300 decoration-4 underline-offset-4">الروضة السابعة</span> نؤمن بأن الطفولة هي أجمل حكاية وبداية كل مستقبل مشرق! احتفلنا بأطفالنا الرائعين في أجواء مليئة بالمرح، والتعلم باللعب، وتعزيز القيم الإيجابية، والتعريف بحقوق الطفل والغذاء الصحي لبناء جيل واثق وسعيد.
+          </p>
+
+          <!-- شارات أبرز محاور الاحتفال -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+            <span class="bg-amber-300 text-purple-950 font-black px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm shadow-sm">
+              ⚖️ التعريف بحقوق الطفل
+            </span>
+            <span class="bg-emerald-300 text-emerald-950 font-black px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm shadow-sm">
+              🍎 التوعية بالغذاء الصحي
+            </span>
+            <span class="bg-rose-300 text-rose-950 font-black px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm shadow-sm">
+              🎯 أركان اللعب والمرح
+            </span>
+            <span class="bg-white text-purple-900 font-black px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm shadow-sm">
+              🤝 شراكة الأسرة والروضة
+            </span>
+          </div>
+        </div>
+
+        <!-- صندوق هدية الروضة السابعة التفاعلي -->
+        <div class="lg:col-span-4 flex flex-col items-center justify-center">
+          <button
+            id="hero-gift-btn"
+            type="button"
+            class="btn-3d group relative flex flex-col items-center justify-center w-44 h-44 sm:w-48 sm:h-48 rounded-3xl bg-amber-300 hover:bg-amber-200 text-purple-950 border-4 border-white shadow-btn3d animate-wiggle cursor-pointer"
+            aria-label="افتح هدية الروضة السابعة"
+          >
+            <svg class="w-22 h-22 sm:w-24 sm:h-24 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60 28C54 17 38 15 36 25C34 33 49 35 60 32C71 35 86 33 84 25C82 15 66 17 60 28Z" fill="#FF4D6D" stroke="#4C1D95" stroke-width="4" stroke-linejoin="round"/>
+              <rect x="20" y="34" width="80" height="20" rx="7" fill="#FF7B54" stroke="#4C1D95" stroke-width="4"/>
+              <rect x="53" y="34" width="14" height="20" fill="#FF4D6D" stroke="#4C1D95" stroke-width="3.5"/>
+              <rect x="26" y="54" width="68" height="48" rx="8" fill="#FFD166" stroke="#4C1D95" stroke-width="4"/>
+              <rect x="53" y="54" width="14" height="48" fill="#FF4D6D" stroke="#4C1D95" stroke-width="3.5"/>
+              <circle cx="38" cy="68" r="4" fill="#FFFDF7"/>
+            </svg>
+            <span id="hero-gift-label" class="mt-1.5 font-black text-sm sm:text-base text-purple-950 text-center px-2">
+              افتح هدية الروضة السابعة 🎁
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- رسالة المفاجأة عند فتح الصندوق -->
+      <div
+        id="hero-gift-banner"
+        class="hidden mt-6 bg-white text-purple-950 rounded-2xl p-4 sm:p-5 border-2 border-amber-300 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3 animate-pop"
+        role="status"
+        aria-live="polite"
+      >
+        <div class="flex items-center gap-3 text-center sm:text-right">
+          <span class="text-3xl sm:text-4xl shrink-0">🏆</span>
+          <div>
+            <p class="font-black text-lg text-purple-900">هدية خاصة من منسوبات الروضة السابعة!</p>
+            <p id="hero-gift-text" class="font-bold text-sm sm:text-base text-slate-700">
+              أنت نجم مضيء في روضتنا! ابتسامتك وفضولك وحبك للتعلم تجعل كل يوم عيداً.
+            </p>
+          </div>
+        </div>
+        <button
+          id="hero-gift-again-btn"
+          type="button"
+          class="btn-3d bg-amber-300 hover:bg-amber-400 text-purple-950 font-black px-4 py-2 rounded-xl text-sm shrink-0 cursor-pointer"
+        >
+          مفاجأة أخرى ✨
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. قسم حقوق الطفل التفاعلي (مستوحى من لوحة حقوق الطفل في الروضة السابعة) -->
+    <section id="rights-section" aria-labelledby="rights-heading" class="space-y-6">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="inline-block bg-purple-100 text-purple-800 font-black px-4 py-1 rounded-full text-sm">
+          ⚖️ اعرف حقوقك يا بطل
+        </span>
+        <h2 id="rights-heading" class="text-2xl sm:text-4xl font-black text-purple-950">
+          حقوق الطفل في الروضة السابعة 🌈
+        </h2>
+        <p class="text-sm sm:text-base font-bold text-slate-600">
+          اضغط على كل بطاقة ملونة لتكتشف حقك الجميل وتحصل على نجمة تشجيعية!
+        </p>
+      </div>
+
+      <!-- شبكة بطاقات حقوق الطفل التفاعلية -->
+      <div id="rights-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- يتم توليد البطاقات عبر JavaScript -->
+      </div>
+
+      <!-- شريط أرقام المساندة والطوارئ الموضحة في لوحة الروضة -->
+      <div class="rounded-3xl bg-gradient-to-r from-amber-50 via-rose-50 to-sky-50 border-2 border-amber-200 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-center gap-3 text-center md:text-right">
+          <span class="text-3xl sm:text-4xl bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm shrink-0">🛡️</span>
+          <div>
+            <h3 class="font-black text-lg text-slate-900">أرقام تهم سلامة وحماية الطفل</h3>
+            <p class="text-xs sm:text-sm font-bold text-slate-600">كما وردت في لوحة التوعية بحقوق الطفل في الروضة السابعة</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <div class="bg-white border-2 border-purple-200 rounded-2xl px-4 py-2 text-center shadow-sm">
+            <span class="block text-xs font-bold text-slate-500">خط مساندة الطفل</span>
+            <span class="font-black text-lg text-purple-800 tracking-wide" dir="ltr">116111</span>
+          </div>
+          <div class="bg-white border-2 border-sky-200 rounded-2xl px-4 py-2 text-center shadow-sm">
+            <span class="block text-xs font-bold text-slate-500">الشرطة</span>
+            <span class="font-black text-lg text-sky-800 tracking-wide" dir="ltr">999</span>
+          </div>
+          <div class="bg-white border-2 border-rose-200 rounded-2xl px-4 py-2 text-center shadow-sm">
+            <span class="block text-xs font-bold text-slate-500">الدفاع المدني</span>
+            <span class="font-black text-lg text-rose-800 tracking-wide" dir="ltr">998</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ألبوم صور احتفال الروضة السابعة (جميع الصور العشر مدمجة بالكامل) -->
+    <section id="gallery-section" aria-labelledby="gallery-heading" class="space-y-6">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="inline-block bg-sky-100 text-sky-800 font-black px-4 py-1 rounded-full text-sm">
+          📸 ذكريات مبهجة من الروضة السابعة
+        </span>
+        <h2 id="gallery-heading" class="text-2xl sm:text-4xl font-black text-slate-900">
+          ألبوم احتفال الروضة السابعة باليوم العالمي للطفل 🎨
+        </h2>
+        <p class="text-sm sm:text-base font-bold text-slate-600">
+          تصفّح لقطات الفرح وأركان الألعاب والتوعية، واضغط على أي صورة لعرضها بالحجم الكامل!
+        </p>
+      </div>
+
+      <!-- أزرار تصفية الصور حسب الركن -->
+      <div class="flex items-center justify-center flex-wrap gap-2.5" role="tablist" aria-label="تصفية صور الاحتفال">
+        <button
+          type="button"
+          data-filter="all"
+          class="gallery-filter-btn btn-3d bg-purple-600 text-white font-black px-4 py-2 rounded-2xl text-sm shadow-btn3d cursor-pointer"
+        >
+          الكل (10 صور) 🌟
+        </button>
+        <button
+          type="button"
+          data-filter="kids"
+          class="gallery-filter-btn btn-3d bg-white hover:bg-rose-50 text-slate-800 border-2 border-rose-200 font-extrabold px-4 py-2 rounded-2xl text-sm cursor-pointer"
+        >
+          أطفالنا المبدعون 💖
+        </button>
+        <button
+          type="button"
+          data-filter="games"
+          class="gallery-filter-btn btn-3d bg-white hover:bg-sky-50 text-slate-800 border-2 border-sky-200 font-extrabold px-4 py-2 rounded-2xl text-sm cursor-pointer"
+        >
+          أركان الألعاب والمرح 🎯
+        </button>
+        <button
+          type="button"
+          data-filter="awareness"
+          class="gallery-filter-btn btn-3d bg-white hover:bg-emerald-50 text-slate-800 border-2 border-emerald-200 font-extrabold px-4 py-2 rounded-2xl text-sm cursor-pointer"
+        >
+          التوعية والغذاء الصحي 🍎
+        </button>
+      </div>
+
+      <!-- شبكة الصور التفاعلية -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- يتم عرض جميع الصور الـ 10 هنا -->
+      </div>
+    </section>
+
+    <!-- 4. رسالة إلى أطفالنا وأولياء الأمور + حائط الأمنيات التفاعلي -->
+    <section id="messages-section" aria-labelledby="messages-heading" class="space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="inline-block bg-rose-100 text-rose-800 font-black px-4 py-1 rounded-full text-sm">
+          💌 قلوب تجتمع على حب الطفل
+        </span>
+        <h2 id="messages-heading" class="text-2xl sm:text-4xl font-black text-slate-900">
+          رسالة إلى أطفالنا الأبطال وأولياء الأمور الكرام
+        </h2>
+      </div>
+
+      <!-- بطاقتا الرسالة: للأطفال وللأهالي -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- رسالة إلى أطفالنا -->
+        <article class="rounded-3xl bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-100 border-4 border-white p-6 sm:p-8 shadow-playful space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-3xl shadow-sm shrink-0">
+              🌟
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-black text-amber-950">إلى أطفالنا الأبطال في الروضة السابعة</h3>
+              <p class="text-xs sm:text-sm font-bold text-amber-800">أنتم بهجة المكان وصنّاع الغد</p>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg font-bold text-slate-800 leading-relaxed">
+            أطفالنا الأعزاء، في يومكم العالمي نحتفي بابتسامتكم الصادقة، وفضولكم الجميل، وقلوبكم الصغيرة المليئة بالحب والتعاون. أنتم تستحقون أن تلعبوا بأمان، وتتعلموا بشغف، وتعبّروا عن أحلامكم بكل ثقة.
+          </p>
+
+          <ul class="space-y-2 text-sm sm:text-base font-extrabold text-amber-950 bg-white/75 rounded-2xl p-4 border border-amber-200">
+            <li>✨ نحب تعاونكم واحترامكم لأصدقائكم ونبذ التنمر.</li>
+            <li>🍎 نشجعكم على الغذاء الصحي والعناية بأسنانكم الجميلة.</li>
+            <li>🎨 فخورون بإبداعكم في اللعب والتلوين واكتشاف العالم.</li>
+          </ul>
+        </article>
+
+        <!-- رسالة إلى الأهالي (أولياء الأمور) -->
+        <article class="rounded-3xl bg-gradient-to-br from-purple-100 via-fuchsia-50 to-sky-100 border-4 border-white p-6 sm:p-8 shadow-playful space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-3xl shadow-sm shrink-0">
+              👨‍👩‍👧‍👦
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-black text-purple-950">رسالة شكر وتقدير لأولياء الأمور</h3>
+              <p class="text-xs sm:text-sm font-bold text-purple-800">شراكة تصنع مستقبلاً مشرقاً لأبنائنا</p>
+            </div>
+          </div>
+
+          <blockquote class="bg-white/85 border-r-4 border-purple-600 rounded-2xl p-4 text-sm sm:text-base font-extrabold text-purple-950 leading-relaxed shadow-sm">
+            «عزيزي ولي الأمر: مشاركتك الإيجابية تصنع فارقاً كبيراً في رحلة تعلم أبنائك، فهي تعزز نجاحهم، وتشجعهم على الحضور، وتزيد من إحساسهم بالرضا في الروضة، وتجعلك شريكاً فاعلاً في تطوير تجربتهم التعليمية.»
+          </blockquote>
+
+          <p class="text-base font-bold text-slate-800 leading-relaxed">
+            تتقدم إدارة ومعلمات <span class="font-black text-purple-900">الروضة السابعة</span> بجزيل الشكر لكل أب وأم يغرسان في طفلهما الثقة والأمان وحب المعرفة. معاً نرعى طفولتهم ليحلقوا نحو مستقبل مشرق بإذن الله.
+          </p>
+        </article>
+      </div>
+
+      <!-- حائط رسائل الحب والأمنيات التفاعلي -->
+      <div class="rounded-3xl bg-white border-4 border-purple-100 p-6 sm:p-8 shadow-playful space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-purple-50 pb-4">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-purple-950">💖 حائط رسائل الأهالي والزوار لأطفالنا</h3>
+            <p class="text-sm font-bold text-slate-600">اكتب دعوة جميلة أو كلمة تشجيعية لأطفال الروضة السابعة لتظهر فوراً على اللوحة!</p>
+          </div>
+        </div>
+
+        <form id="wish-form" class="grid grid-cols-1 md:grid-cols-12 gap-3.5">
+          <div class="md:col-span-3">
+            <label for="wish-sender" class="block text-xs font-black text-slate-700 mb-1">الاسم / الصفة (مثال: أم خالد)</label>
+            <input
+              id="wish-sender"
+              type="text"
+              maxlength="35"
+              placeholder="اكتب اسمك هنا..."
+              class="w-full rounded-2xl border-2 border-purple-200 focus:border-purple-500 focus:outline-none px-4 py-2.5 font-bold text-sm bg-purple-50/40"
+              required
+            />
+          </div>
+          <div class="md:col-span-7">
+            <label for="wish-text" class="block text-xs font-black text-slate-700 mb-1">رسالتك أو دعوتك لأطفالنا</label>
+            <input
+              id="wish-text"
+              type="text"
+              maxlength="140"
+              placeholder="مثال: حفظكم الله يا أبطال الروضة السابعة وجعلكم قرة عين لوالديكم..."
+              class="w-full rounded-2xl border-2 border-purple-200 focus:border-purple-500 focus:outline-none px-4 py-2.5 font-bold text-sm bg-purple-50/40"
+              required
+            />
+          </div>
+          <div class="md:col-span-2 flex items-end">
+            <button
+              type="submit"
+              class="btn-3d w-full bg-purple-600 hover:bg-purple-700 text-white font-black py-2.5 px-4 rounded-2xl text-sm shadow-btn3d cursor-pointer"
+            >
+              أضف الرسالة ✨
+            </button>
+          </div>
+        </form>
+
+        <!-- بطاقات الرسائل المنشورة -->
+        <div id="wishes-board" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+          <!-- يتم تعبئتها برمجياً -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. مسابقة أبطال الروضة السابعة التفاعلية -->
+    <section id="quiz-section" aria-labelledby="quiz-heading" class="space-y-6">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="inline-block bg-emerald-100 text-emerald-800 font-black px-4 py-1 rounded-full text-sm">
+          🧠 العب وتعلّم
+        </span>
+        <h2 id="quiz-heading" class="text-2xl sm:text-4xl font-black text-slate-900">
+          مسابقة أبطال الروضة السابعة 🎯
+        </h2>
+        <p class="text-sm sm:text-base font-bold text-slate-600">
+          أجب عن أسئلة حقوق الطفل والغذاء الصحي والسلوك الإيجابي واجمع النجوم الذهبية!
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-4 border-emerald-100 shadow-playful max-w-4xl mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b-2 border-emerald-50 pb-4 mb-6">
+          <div class="flex items-center gap-2 font-black text-emerald-900 text-lg">
+            <span>🏆</span>
+            <span>اختبر معلوماتك مع أصدقائك</span>
+          </div>
+          <div class="bg-amber-100 text-amber-950 font-black px-4 py-1.5 rounded-2xl text-sm border-2 border-amber-300">
+            السؤال <span id="quiz-current-num">1</span> من <span id="quiz-total-num">4</span>
+          </div>
+        </div>
+
+        <!-- مرحلة الأسئلة -->
+        <div id="quiz-stage" class="space-y-5">
+          <div class="bg-gradient-to-r from-sky-50 via-purple-50 to-amber-50 border-2 border-purple-100 rounded-3xl p-5 sm:p-6 text-center space-y-2">
+            <div id="quiz-emoji" class="text-4xl sm:text-5xl">🍎</div>
+            <h3 id="quiz-question-text" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+              ...
+            </h3>
+          </div>
+
+          <div id="quiz-options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <!-- الخيارات -->
+          </div>
+
+          <div
+            id="quiz-feedback"
+            class="hidden rounded-2xl p-4 text-center font-extrabold text-base sm:text-lg animate-pop"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <div class="flex items-center justify-between pt-2">
+            <button
+              id="quiz-prev-btn"
+              type="button"
+              class="btn-3d bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-800 font-extrabold px-5 py-2.5 rounded-2xl text-sm sm:text-base cursor-pointer"
+            >
+              السؤال السابق
+            </button>
+            <button
+              id="quiz-next-btn"
+              type="button"
+              class="btn-3d bg-emerald-500 hover:bg-emerald-600 text-white font-black px-6 py-2.5 rounded-2xl text-sm sm:text-base shadow-btn3d cursor-pointer"
+            >
+              السؤال التالي ←
+            </button>
+          </div>
+        </div>
+
+        <!-- شاشة ختام المسابقة -->
+        <div id="quiz-summary" class="hidden text-center py-6 space-y-4 animate-pop">
+          <div class="text-6xl">🎉🌟👑</div>
+          <h3 class="text-2xl sm:text-3xl font-black text-purple-950">
+            أحسنت يا بطل الروضة السابعة!
+          </h3>
+          <p id="quiz-score-summary" class="text-lg font-bold text-slate-700">
+            أجبت بنجاح على جميع الأسئلة!
+          </p>
+          <button
+            id="quiz-restart-btn"
+            type="button"
+            class="btn-3d bg-purple-600 hover:bg-purple-700 text-white font-black px-7 py-3 rounded-2xl text-base shadow-btn3d cursor-pointer"
+          >
+            إعادة المسابقة 🔄
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- تذييل الصفحة -->
+  <footer class="bg-white border-t-2 border-purple-100 py-8 px-4 text-center space-y-2">
+    <p class="font-black text-lg text-purple-900">
+      الروضة السابعة — احتفال اليوم العالمي للطفل 🌟
+    </p>
+    <p class="text-sm font-bold text-slate-600">
+      طفولة سعيدة، وحقوق محفوظة، وشراكة أسرية تصنع المستقبل 💖
+    </p>
+  </footer>
+
+  <!-- نافذة عرض الصور بالحجم الكامل (Lightbox Modal) -->
+  <div
+    id="lightbox-modal"
+    class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightbox-title"
+  >
+    <div class="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-white animate-pop">
+      <!-- شريط علوي في العارض -->
+      <div class="flex items-center justify-between px-4 py-3 bg-purple-50 border-b border-purple-100">
+        <span id="lightbox-counter" class="text-xs sm:text-sm font-black text-purple-800 bg-white px-3 py-1 rounded-full border border-purple-200">
+          1 / 10
+        </span>
+        <button
+          id="lightbox-close-btn"
+          type="button"
+          class="btn-3d bg-rose-500 hover:bg-rose-600 text-white font-black px-4 py-1.5 rounded-full text-sm cursor-pointer"
+          aria-label="إغلاق الصورة"
+        >
+          إغلاق ✕
+        </button>
+      </div>
+
+      <!-- الصورة المكبرة -->
+      <div class="relative bg-slate-900 flex items-center justify-center max-h-[68vh] overflow-hidden">
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="max-h-[68vh] w-auto max-w-full object-contain select-none"
+        />
+
+        <!-- زر الصورة السابقة -->
+        <button
+          id="lightbox-prev-btn"
+          type="button"
+          class="btn-3d absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-purple-950 font-black text-xl shadow-lg flex items-center justify-center cursor-pointer"
+          aria-label="الصورة السابقة"
+        >
+          ›
+        </button>
+
+        <!-- زر الصورة التالية -->
+        <button
+          id="lightbox-next-btn"
+          type="button"
+          class="btn-3d absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-purple-950 font-black text-xl shadow-lg flex items-center justify-center cursor-pointer"
+          aria-label="الصورة التالية"
+        >
+          ‹
+        </button>
+      </div>
+
+      <!-- وصف الصورة -->
+      <div class="p-4 sm:p-5 bg-white text-center sm:text-right space-y-1">
+        <h3 id="lightbox-title" class="text-lg sm:text-xl font-black text-purple-950"></h3>
+        <p id="lightbox-caption" class="text-sm sm:text-base font-bold text-slate-600"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * نظام المؤثرات الصوتية الخفيفة عبر Web Audio API (بدون روابط خارجية)
+     */
+    const SoundFX = (() => {
+      let ctx = null;
+      let muted = false;
+
+      function ensureContext() {
+        if (muted) return null;
+        if (!ctx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            ctx = new AudioContextClass();
+          }
+        }
+        if (ctx && ctx.state === 'suspended') {
+          ctx.resume().catch(() => {});
+        }
+        return ctx;
+      }
+
+      function playPop(freq = 540, duration = 0.11) {
+        const audioCtx = ensureContext();
+        if (!audioCtx) return;
+        try {
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          osc.frequency.exponentialRampToValueAtTime(freq * 1.4, now + duration);
+
+          gain.gain.setValueAtTime(0.14, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + duration);
+        } catch (e) {}
+      }
+
+      function playChime() {
+        const audioCtx = ensureContext();
+        if (!audioCtx) return;
+        const notes = [523.25, 659.25, 783.99, 1046.5];
+        notes.forEach((freq, idx) => {
+          try {
+            const startTime = audioCtx.currentTime + idx * 0.08;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, startTime);
+
+            gain.gain.setValueAtTime(0.001, startTime);
+            gain.gain.linearRampToValueAtTime(0.16, startTime + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.28);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(startTime);
+            osc.stop(startTime + 0.3);
+          } catch (e) {}
+        });
+      }
+
+      function playSuccess() {
+        const audioCtx = ensureContext();
+        if (!audioCtx) return;
+        [587.33, 880].forEach((freq, idx) => {
+          try {
+            const startTime = audioCtx.currentTime + idx * 0.1;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, startTime);
+
+            gain.gain.setValueAtTime(0.15, startTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.24);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(startTime);
+            osc.stop(startTime + 0.25);
+          } catch (e) {}
+        });
+      }
+
+      function toggleMute() {
+        muted = !muted;
+        if (!muted) {
+          ensureContext();
+          playPop(600, 0.09);
+        }
+        return muted;
+      }
+
+      return { playPop, playChime, playSuccess, toggleMute };
+    })();
+
+    /**
+     * إدارة النجوم والقصاصات الملونة
+     */
+    const AppState = (() => {
+      let stars = 0;
+      const starEl = document.getElementById('star-count');
+      const confettiLayer = document.getElementById('confetti-layer');
+      const confettiSymbols = ['⭐', '🌟', '🎉', '🎈', '💖', '✨', '🎊'];
+      const confettiColors = ['#7C3AED', '#FF6B6B', '#FFD166', '#38BDF8', '#34D399', '#F472B6'];
+
+      function addStars(amount = 1) {
+        stars += amount;
+        starEl.textContent = stars;
+        starEl.parentElement.classList.remove('animate-pop');
+        void starEl.parentElement.offsetWidth;
+        starEl.parentElement.classList.add('animate-pop');
+      }
+
+      function spawnConfetti(originX = window.innerWidth / 2, originY = window.innerHeight / 3, count = 22) {
+        for (let i = 0; i < count; i++) {
+          const piece = document.createElement('span');
+          piece.className = 'confetti-piece select-none';
+          if (i % 2 === 0) {
+            piece.textContent = confettiSymbols[i % confettiSymbols.length];
+            piece.style.fontSize = `${18 + (i % 4) * 5}px`;
+          } else {
+            piece.style.width = `${10 + (i % 3) * 4}px`;
+            piece.style.height = `${14 + (i % 3) * 5}px`;
+            piece.style.borderRadius = '4px';
+            piece.style.backgroundColor = confettiColors[i % confettiColors.length];
+          }
+
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.4;
+          const speed = 85 + Math.random() * 170;
+          const tx = Math.cos(angle) * speed;
+          const ty = Math.sin(angle) * speed + 120 + Math.random() * 80;
+          const rot = (Math.random() > 0.5 ? 1 : -1) * (240 + Math.random() * 360);
+          const dur = (0.9 + Math.random() * 0.5).toFixed(2) + 's';
+
+          piece.style.left = `${originX}px`;
+          piece.style.top = `${originY}px`;
+          piece.style.setProperty('--tx', `${tx.toFixed(1)}px`);
+          piece.style.setProperty('--ty', `${ty.toFixed(1)}px`);
+          piece.style.setProperty('--rot', `${rot.toFixed(0)}deg`);
+          piece.style.setProperty('--dur', dur);
+
+          confettiLayer.appendChild(piece);
+          setTimeout(() => piece.remove(), 1550);
+        }
+      }
+
+      return { addStars, spawnConfetti };
+    })();
+
+    // زر كتم وتشغيل الصوت
+    const soundBtn = document.getElementById('sound-toggle-btn');
+    const soundIcon = document.getElementById('sound-icon');
+    const soundLabel = document.getElementById('sound-label');
+
+    soundBtn.addEventListener('click', () => {
+      const nowMuted = SoundFX.toggleMute();
+      soundBtn.setAttribute('aria-pressed', String(nowMuted));
+      soundIcon.textContent = nowMuted ? '🔇' : '🔊';
+      soundLabel.textContent = nowMuted ? 'مكتوم' : 'الصوت';
+    });
+
+    // 1. صندوق هدية الروضة السابعة في أعلى الصفحة
+    const heroGiftBtn = document.getElementById('hero-gift-btn');
+    const heroGiftLabel = document.getElementById('hero-gift-label');
+    const heroGiftBanner = document.getElementById('hero-gift-banner');
+    const heroGiftText = document.getElementById('hero-gift-text');
+    const heroGiftAgainBtn = document.getElementById('hero-gift-again-btn');
+
+    const schoolSurprises = [
+      'أنت نجم مضيء في الروضة السابعة! ابتسامتك وفضولك وحبك للتعلم تجعل كل يوم عيداً.',
+      'حقك في اللعب والتعلم والمرح محفوظ دائماً في روضتنا الجميلة! +1 نجمة ذهبية.',
+      'معاً مع أسرتك الرائعة نصنع لك ذكريات جميلة ومستقبلاً مشرقاً مليئاً بالنجاح!',
+      'أنت طفل مبدع، لطيف، ومتعاون مع أصدقائك. كل عام وأنت بخير وسعادة!'
+    ];
+    let surpriseIndex = 0;
+
+    function triggerHeroGift(e) {
+      const rect = heroGiftBtn.getBoundingClientRect();
+      const x = e && e.clientX ? e.clientX : rect.left + rect.width / 2;
+      const y = e && e.clientY ? e.clientY : rect.top + rect.height / 2;
+
+      SoundFX.playChime();
+      AppState.spawnConfetti(x, y, 26);
+      AppState.addStars(1);
+
+      heroGiftText.textContent = schoolSurprises[surpriseIndex % schoolSurprises.length];
+      surpriseIndex++;
+
+      heroGiftBanner.classList.remove('hidden');
+      heroGiftBanner.classList.remove('animate-pop');
+      void heroGiftBanner.offsetWidth;
+      heroGiftBanner.classList.add('animate-pop');
+      heroGiftLabel.textContent = 'فُتحت الهدية! 🎉';
+    }
+
+    heroGiftBtn.addEventListener('click', triggerHeroGift);
+    heroGiftAgainBtn.addEventListener('click', triggerHeroGift);
+
+    /**
+     * 2. قسم حقوق الطفل التفاعلي
+     */
+    (() => {
+      const rightsData = [
+        {
+          emoji: '📚',
+          title: 'الحق في التعليم واللعب والمرح',
+          shortDesc: 'لكل طفل الحق في التعلم الممتع واللعب الآمن لاكتشاف مواهبه.',
+          detail: 'في الروضة السابعة نوفر أركاناً تعليمية وألعاباً حركية وفنية تنمي ذكاء الطفل وتمنحه الفرح كل يوم.',
+          bg: 'bg-sky-50 border-sky-200 hover:border-sky-400',
+          badge: 'bg-sky-500 text-white'
+        },
+        {
+          emoji: '🍎',
+          title: 'الحق في الرعاية الصحية والغذاء الصحي',
+          shortDesc: 'من حق الطفل التمتع بصحة جيدة وتغذية سليمة تقوّي جسمه وأسنانه.',
+          detail: 'نحرص على توعية أطفالنا بأهمية الفواكه والخضروات وتنظيف الأسنان للمحافظة على صحتهم ونشاطهم.',
+          bg: 'bg-emerald-50 border-emerald-200 hover:border-emerald-400',
+          badge: 'bg-emerald-500 text-white'
+        },
+        {
+          emoji: '🏡',
+          title: 'الحق في الرعاية الأسرية والحب',
+          shortDesc: 'من حق كل طفل أن ينشأ في أسرة محبة تحتضنه وتدعم خطواته.',
+          detail: 'الأسرة هي الحضن الأول للطفل، وتعاون الأهل مع الروضة يعزز شعور الطفل بالأمان والثقة بالنفس.',
+          bg: 'bg-amber-50 border-amber-200 hover:border-amber-400',
+          badge: 'bg-amber-500 text-white'
+        },
+        {
+          emoji: '🛡️',
+          title: 'الحق في الحماية والأمان',
+          shortDesc: 'حماية الطفل من العنف والإساءة وتوفير بيئة آمنة في كل مكان.',
+          detail: 'سلامة أطفالنا أولوية قصوى، ونعرّفهم بوسائل الأمان وخط مساندة الطفل (116111) لحمايتهم دائماً.',
+          bg: 'bg-rose-50 border-rose-200 hover:border-rose-400',
+          badge: 'bg-rose-500 text-white'
+        },
+        {
+          emoji: '🤝',
+          title: 'الحق في المساواة وعدم التمييز',
+          shortDesc: 'جميع الأطفال متساوون في الحقوق والاحترام والمحبة دون استثناء.',
+          detail: 'نغرس في نفوس أطفالنا قيم الاحترام والتسامح والتعاون ونبذ التنمر ليعيشوا بروح الفريق الواحد.',
+          bg: 'bg-purple-50 border-purple-200 hover:border-purple-400',
+          badge: 'bg-purple-600 text-white'
+        },
+        {
+          emoji: '🌟',
+          title: 'الحق في التعبير والمستقبل المشرق',
+          shortDesc: 'من حق الطفل أن يعبّر عن رأيه وأحلامه وأن ينعم بحياة كريمة.',
+          detail: 'نستمع لأفكار أطفالنا ونشجعهم على الرسم والحوار والابتكار لبناء جيل مبدع يفخر بوطنه.',
+          bg: 'bg-orange-50 border-orange-200 hover:border-orange-400',
+          badge: 'bg-orange-500 text-white'
+        }
+      ];
+
+      const gridEl = document.getElementById('rights-grid');
+      const discovered = new Set();
+
+      rightsData.forEach((item, idx) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = `btn-3d text-right rounded-3xl border-3 p-5 sm:p-6 shadow-sm transition-all flex flex-col justify-between gap-3 cursor-pointer ${item.bg}`;
+        card.setAttribute('aria-expanded', 'false');
+
+        card.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-4xl bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm">${item.emoji}</span>
+              <span class="right-status-pill text-xs font-black px-3 py-1 rounded-full ${item.badge}">
+                اضغط للاكتشاف ✨
+              </span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-slate-900">${item.title}</h3>
+            <p class="text-sm font-bold text-slate-700 leading-relaxed">${item.shortDesc}</p>
+          </div>
+          <div class="right-detail hidden mt-2 pt-3 border-t border-slate-200/80 text-xs sm:text-sm font-extrabold text-slate-800 leading-relaxed bg-white/80 rounded-2xl p-3">
+            ${item.detail}
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          const detailBox = card.querySelector('.right-detail');
+          const pill = card.querySelector('.right-status-pill');
+          const isOpen = !detailBox.classList.contains('hidden');
+
+          if (isOpen) {
+            detailBox.classList.add('hidden');
+            card.setAttribute('aria-expanded', 'false');
+            SoundFX.playPop(440, 0.08);
+          } else {
+            detailBox.classList.remove('hidden');
+            detailBox.classList.add('animate-pop');
+            card.setAttribute('aria-expanded', 'true');
+            SoundFX.playSuccess();
+
+            if (!discovered.has(idx)) {
+              discovered.add(idx);
+              AppState.addStars(1);
+              pill.textContent = 'تم الاكتشاف ⭐';
+              const rect = card.getBoundingClientRect();
+              AppState.spawnConfetti(
+                e.clientX || rect.left + rect.width / 2,
+                e.clientY || rect.top + rect.height / 2,
+                14
+              );
+            }
+          }
+        });
+
+        gridEl.appendChild(card);
+      });
+    })();
+
+    /**
+     * 3. ألبوم صور احتفال الروضة السابعة (جميع الصور الـ 10 + Lightbox كامل)
+     */
+    (() => {
+      const photos = [
+        {
+          src: 'ae23acaa-0c66-4b67-87a9-1fda23a6a8e8.jpeg',
+          category: 'kids',
+          categoryLabel: 'أطفالنا المبدعون',
+          title: 'أطفال الروضة السابعة يعبّرون عن حبهم',
+          caption: 'لقطة مليئة بالبهجة لأطفال الروضة السابعة أمام لوحة اليوم العالمي للطفل وحقوق الطفل.'
+        },
+        {
+          src: '103324a1-9549-4961-bbaa-4fa0d7a35f8a.jpeg',
+          category: 'kids',
+          categoryLabel: 'أطفالنا المبدعون',
+          title: 'ابتسامات أبطالنا في يومهم العالمي',
+          caption: 'فرحة أطفال الروضة السابعة وتفاعلهم الجميل خلال فعاليات الاحتفال باليوم العالمي للطفل.'
+        },
+        {
+          src: '02aa90dd-0f5f-45b9-abb1-c14f2531a993.jpeg',
+          category: 'kids',
+          categoryLabel: 'أطفالنا المبدعون',
+          title: 'جلسة جماعية مع لوحات السلوك الإيجابي',
+          caption: 'أطفالنا يجتمعون بروح التعاون والاحترام والتسامح أمام ملصقات السلوك الإيجابي.'
+        },
+        {
+          src: '3a921567-6d46-44db-8dda-ff79729d0cf4.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'ساحة الألعاب والمرح في الروضة السابعة',
+          caption: 'تجهيز ساحة الروضة السابعة بالألعاب المتنوعة ولافتة اليوم العالمي للطفل.'
+        },
+        {
+          src: '780f9c29-bd8f-4970-8a5d-de489dd2fc95.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'تنوع الأركان الحركية والترفيهية',
+          caption: 'ألعاب حركية وتفاعلية متنوعة تنمي التوازن والتركيز وروح المشاركة لدى الأطفال.'
+        },
+        {
+          src: 'bea00d2d-1728-419c-a850-63d032f07b09.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'ركن تصويب الكرات الملونة',
+          caption: 'لعبة التصويب المرحة بالكرات الملونة لتعزيز التآزر البصري الحركي لدى الأطفال.'
+        },
+        {
+          src: '34167cdc-52e1-401a-afe1-6fc85cddf1df.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'ركن التلوين والبيت الكرتوني',
+          caption: 'ركن الإبداع الفني حيث يلوّن الأطفال مجسم المنزل بألوانهم المفضلة.'
+        },
+        {
+          src: '34c08de0-59a0-409d-99bc-abf934de4a4a.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'ركن التحدي والحواجز الملونة',
+          caption: 'ألعاب حركية منظمة بالكراسي والكرات الملونة لبث الحماس والنشاط.'
+        },
+        {
+          src: '7a9e9d77-d872-4c21-8421-b6f4070b5b2d.jpeg',
+          category: 'games',
+          categoryLabel: 'أركان الألعاب',
+          title: 'ركن الألعاب الذهنية والدومينو',
+          caption: 'تنمية مهارات التفكير والمطابقة والعدّ من خلال لعبة الدومينو الممتعة.'
+        },
+        {
+          src: '16f7b18e-4a61-4ad1-bd16-0e5fd0543df6.jpeg',
+          category: 'awareness',
+          categoryLabel: 'التوعية والغذاء الصحي',
+          title: 'ركن الغذاء الصحي وصحة الأسنان',
+          caption: 'توعية الأطفال بأهمية الفواكه والغذاء الصحي والمحافظة على نظافة الأسنان بجانب لوحة حقوق الطفل.'
+        }
+      ];
+
+      const galleryGrid = document.getElementById('gallery-grid');
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+
+      // عناصر Lightbox
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxCounter = document.getElementById('lightbox-counter');
+      const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+      const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+      const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+
+      let currentFilteredPhotos = [...photos];
+      let currentLightboxIndex = 0;
+
+      function openLightbox(index) {
+        currentLightboxIndex = index;
+        updateLightboxContent();
+        lightboxModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        SoundFX.playPop(580, 0.09);
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.add('hidden');
+        document.body.style.overflow = '';
+        SoundFX.playPop(420, 0.08);
+      }
+
+      function updateLightboxContent() {
+        const photo = currentFilteredPhotos[currentLightboxIndex];
+        if (!photo) return;
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.title;
+        lightboxTitle.textContent = photo.title;
+        lightboxCaption.textContent = photo.caption;
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${currentFilteredPhotos.length}`;
+      }
+
+      function showPrevPhoto() {
+        currentLightboxIndex =
+          (currentLightboxIndex - 1 + currentFilteredPhotos.length) % currentFilteredPhotos.length;
+        updateLightboxContent();
+        SoundFX.playPop(500, 0.07);
+      }
+
+      function showNextPhoto() {
+        currentLightboxIndex = (currentLightboxIndex + 1) % currentFilteredPhotos.length;
+        updateLightboxContent();
+        SoundFX.playPop(540, 0.07);
+      }
+
+      lightboxCloseBtn.addEventListener('click', closeLightbox);
+      lightboxPrevBtn.addEventListener('click', showPrevPhoto);
+      lightboxNextBtn.addEventListener('click', showNextPhoto);
+
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightboxModal.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showPrevPhoto();
+        if (e.key === 'ArrowLeft') showNextPhoto();
+      });
+
+      function renderGallery(filter = 'all') {
+        currentFilteredPhotos =
+          filter === 'all' ? [...photos] : photos.filter((p) => p.category === filter);
+
+        galleryGrid.innerHTML = '';
+
+        currentFilteredPhotos.forEach((photo, idx) => {
+          const figure = document.createElement('figure');
+          figure.className =
+            'group bg-white rounded-3xl overflow-hidden border-4 border-white shadow-playful hover:-translate-y-1 transition-all duration-200 flex flex-col cursor-pointer animate-pop';
+
+          figure.innerHTML = `
+            <div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              <img
+                src="${photo.src}"
+                alt="${photo.title}"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <span class="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-purple-900 font-black text-xs px-3 py-1 rounded-full shadow-sm border border-purple-100">
+                ${photo.categoryLabel}
+              </span>
+              <span class="absolute bottom-3 left-3 bg-slate-900/75 text-white font-bold text-xs px-3 py-1 rounded-full opacity-95 group-hover:bg-purple-600 transition-colors">
+                تكبير الصورة 🔍
+              </span>
+            </div>
+            <figcaption class="p-4 flex-1 flex flex-col justify-between space-y-1.5">
+              <h3 class="font-black text-base sm:text-lg text-slate-900 leading-snug">
+                ${photo.title}
+              </h3>
+              <p class="text-xs sm:text-sm font-bold text-slate-600 leading-relaxed">
+                ${photo.caption}
+              </p>
+            </figcaption>
+          `;
+
+          figure.addEventListener('click', () => openLightbox(idx));
+          galleryGrid.appendChild(figure);
+        });
+      }
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          SoundFX.playPop(560, 0.08);
+          const selected = btn.dataset.filter;
+          filterBtns.forEach((b) => {
+            if (b === btn) {
+              b.className =
+                'gallery-filter-btn btn-3d bg-purple-600 text-white font-black px-4 py-2 rounded-2xl text-sm shadow-btn3d cursor-pointer';
+            } else {
+              b.className =
+                'gallery-filter-btn btn-3d bg-white hover:bg-purple-50 text-slate-800 border-2 border-purple-200 font-extrabold px-4 py-2 rounded-2xl text-sm cursor-pointer';
+            }
+          });
+          renderGallery(selected);
+        });
+      });
+
+      renderGallery('all');
+    })();
+
+    /**
+     * 4. حائط رسائل الأهالي والزوار التفاعلي
+     */
+    (() => {
+      const wishesBoard = document.getElementById('wishes-board');
+      const wishForm = document.getElementById('wish-form');
+      const wishSenderInput = document.getElementById('wish-sender');
+      const wishTextInput = document.getElementById('wish-text');
+
+      const cardThemes = [
+        'bg-amber-50 border-amber-300 text-amber-950',
+        'bg-sky-50 border-sky-300 text-sky-950',
+        'bg-rose-50 border-rose-300 text-rose-950',
+        'bg-emerald-50 border-emerald-300 text-emerald-950',
+        'bg-purple-50 border-purple-300 text-purple-950'
+      ];
+
+      const initialWishes = [
+        {
+          sender: 'إدارة ومعلمات الروضة السابعة',
+          text: 'كل عام وأطفالنا الأبطال بألف خير وسعادة، نفخر بكم وبابتسامتكم كل صباح 🌟'
+        },
+        {
+          sender: 'ولية أمر طالب',
+          text: 'شكراً للروضة السابعة على هذا الاحتفال المبهج والجهود الرائعة في غرس القيم وحقوق الطفل 💖'
+        },
+        {
+          sender: 'أبو سارة',
+          text: 'اللهم احفظ أطفالنا وبارك فيهم واجعلهم جيلاً صالحاً مبدعاً يخدم دينه ووطنه 🇸🇦'
+        }
+      ];
+
+      function addWishCard(sender, text, animate = false) {
+        const theme = cardThemes[wishesBoard.children.length % cardThemes.length];
+        const card = document.createElement('div');
+        card.className = `rounded-2xl border-2 p-4 shadow-sm space-y-2 ${theme} ${animate ? 'animate-pop' : ''}`;
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between gap-2';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'font-black text-sm';
+        nameSpan.textContent = `✍️ ${sender}`;
+
+        const badgeSpan = document.createElement('span');
+        badgeSpan.className = 'text-base';
+        badgeSpan.textContent = '💛';
+
+        header.appendChild(nameSpan);
+        header.appendChild(badgeSpan);
+
+        const bodyP = document.createElement('p');
+        bodyP.className = 'text-sm font-bold leading-relaxed';
+        bodyP.textContent = text;
+
+        card.appendChild(header);
+        card.appendChild(bodyP);
+
+        if (animate) {
+          wishesBoard.prepend(card);
+        } else {
+          wishesBoard.appendChild(card);
+        }
+      }
+
+      initialWishes.forEach((w) => addWishCard(w.sender, w.text, false));
+
+      wishForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const sender = wishSenderInput.value.trim();
+        const text = wishTextInput.value.trim();
+        if (!sender || !text) return;
+
+        addWishCard(sender, text, true);
+        wishSenderInput.value = '';
+        wishTextInput.value = '';
+
+        SoundFX.playChime();
+        AppState.addStars(1);
+        const rect = wishForm.getBoundingClientRect();
+        AppState.spawnConfetti(rect.left + rect.width / 2, rect.top, 20);
+      });
+    })();
+
+    /**
+     * 5. مسابقة أبطال الروضة السابعة (أسئلة مرتبطة بحقوق الطفل والغذاء الصحي والسلوك الإيجابي)
+     */
+    (() => {
+      const questions = [
+        {
+          emoji: '🍎',
+          question: 'أي من هذه الأطعمة يحافظ على صحة أجسامنا وأسناننا الجميلة؟',
+          options: [
+            'الفواكه الطازجة مثل الفراولة والبطيخ 🍓🍉',
+            'الإكثار من الحلويات قبل النوم 🍬',
+            'المشروبات الغازية كل يوم 🥤',
+            'ترك وجبة الإفطار 🚫'
+          ],
+          correctIndex: 0,
+          cheer: 'رائع يا بطل! الفواكه والغذاء الصحي تمنحنا القوة والنشاط! +2 نجمة'
+        },
+        {
+          emoji: '🤝',
+          question: 'كيف نتعامل مع أصدقائنا في الروضة السابعة؟',
+          options: [
+            'بالتعاون والاحترام والتسامح وعدم التنمر 💖',
+            'بأخذ ألعابهم دون استئذان 🧸',
+            'بالصراخ والغضب 😠',
+            'بعدم مشاركتهم اللعب 🙅'
+          ],
+          correctIndex: 0,
+          cheer: 'أحسنت! التعاون والاحترام والتسامح هي أجمل قيم السلوك الإيجابي! +2 نجمة'
+        },
+        {
+          emoji: '⚖️',
+          question: 'من حقوق كل طفل في اليوم العالمي للطفل:',
+          options: [
+            'الحق في التعليم واللعب والرعاية الصحية 🏫🎨',
+            'الحرمان من اللعب والمرح 🚫',
+            'عدم الذهاب إلى الروضة أبداً ❌',
+            'عدم الاستماع لرأيه 🤐'
+          ],
+          correctIndex: 0,
+          cheer: 'ممتاز! لكل طفل الحق في التعليم واللعب والرعاية الصحية والأمان! +2 نجمة'
+        },
+        {
+          emoji: '🛡️',
+          question: 'ما رقم خط مساندة الطفل الموضح في لوحة حقوق الطفل بالروضة؟',
+          options: [
+            '116111 📞',
+            '12345 🔢',
+            '00000 ❓',
+            '55555 📱'
+          ],
+          correctIndex: 0,
+          cheer: 'ذكي جداً! 116111 هو رقم خط مساندة الطفل لحماية الأطفال ومساندتهم! +2 نجمة'
+        }
+      ];
+
+      let currentIdx = 0;
+      const answeredCorrectly = new Set();
+
+      const currentNumEl = document.getElementById('quiz-current-num');
+      const totalNumEl = document.getElementById('quiz-total-num');
+      const emojiEl = document.getElementById('quiz-emoji');
+      const questionTextEl = document.getElementById('quiz-question-text');
+      const optionsGridEl = document.getElementById('quiz-options-grid');
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const prevBtn = document.getElementById('quiz-prev-btn');
+      const nextBtn = document.getElementById('quiz-next-btn');
+      const quizStageEl = document.getElementById('quiz-stage');
+      const quizSummaryEl = document.getElementById('quiz-summary');
+      const quizScoreSummaryEl = document.getElementById('quiz-score-summary');
+      const quizRestartBtn = document.getElementById('quiz-restart-btn');
+
+      totalNumEl.textContent = questions.length;
+
+      function renderQuestion() {
+        quizStageEl.classList.remove('hidden');
+        quizSummaryEl.classList.add('hidden');
+
+        const q = questions[currentIdx];
+        currentNumEl.textContent = currentIdx + 1;
+        emojiEl.textContent = q.emoji;
+        questionTextEl.textContent = q.question;
+        optionsGridEl.innerHTML = '';
+
+        const alreadySolved = answeredCorrectly.has(currentIdx);
+        if (alreadySolved) {
+          feedbackEl.className =
+            'rounded-2xl p-4 text-center font-extrabold text-base sm:text-lg bg-emerald-100 text-emerald-950 border-2 border-emerald-300 animate-pop';
+          feedbackEl.textContent = q.cheer;
+          feedbackEl.classList.remove('hidden');
+        } else {
+          feedbackEl.classList.add('hidden');
+        }
+
+        q.options.forEach((optText, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          const isCorrectOption = idx === q.correctIndex;
+          btn.className = `btn-3d p-4 rounded-2xl border-3 font-extrabold text-base text-right transition cursor-pointer ${
+            alreadySolved && isCorrectOption
+              ? 'bg-emerald-200 border-emerald-500 text-emerald-950'
+              : 'bg-purple-50/70 hover:bg-purple-100 border-purple-200 text-slate-900'
+          }`;
+          btn.textContent = optText;
+
+          btn.addEventListener('click', (e) => {
+            if (idx === q.correctIndex) {
+              SoundFX.playSuccess();
+              const rect = btn.getBoundingClientRect();
+              AppState.spawnConfetti(
+                e.clientX || rect.left + rect.width / 2,
+                e.clientY || rect.top + rect.height / 2,
+                18
+              );
+              if (!answeredCorrectly.has(currentIdx)) {
+                answeredCorrectly.add(currentIdx);
+                AppState.addStars(2);
+              }
+              btn.className =
+                'btn-3d p-4 rounded-2xl border-3 font-extrabold text-base text-right bg-emerald-200 border-emerald-500 text-emerald-950 cursor-pointer';
+              feedbackEl.className =
+                'rounded-2xl p-4 text-center font-extrabold text-base sm:text-lg bg-emerald-100 text-emerald-950 border-2 border-emerald-300 animate-pop';
+              feedbackEl.textContent = q.cheer;
+              feedbackEl.classList.remove('hidden');
+            } else {
+              SoundFX.playPop(320, 0.14);
+              btn.className =
+                'btn-3d p-4 rounded-2xl border-3 font-extrabold text-base text-right bg-amber-100 border-amber-400 text-amber-950 cursor-pointer';
+              feedbackEl.className =
+                'rounded-2xl p-4 text-center font-extrabold text-base sm:text-lg bg-amber-100 text-amber-950 border-2 border-amber-300 animate-pop';
+              feedbackEl.textContent = 'محاولة جميلة! فكّر قليلاً واختر الإجابة الصحيحة 💡';
+              feedbackEl.classList.remove('hidden');
+            }
+          });
+
+          optionsGridEl.appendChild(btn);
+        });
+
+        prevBtn.disabled = currentIdx === 0;
+        nextBtn.textContent = currentIdx === questions.length - 1 ? 'إنهاء المسابقة 🎉' : 'السؤال التالي ←';
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIdx > 0) {
+          SoundFX.playPop(480, 0.09);
+          currentIdx--;
+          renderQuestion();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        SoundFX.playPop(560, 0.09);
+        if (currentIdx < questions.length - 1) {
+          currentIdx++;
+          renderQuestion();
+        } else {
+          quizStageEl.classList.add('hidden');
+          quizSummaryEl.classList.remove('hidden');
+          quizScoreSummaryEl.textContent = `أجبت بنجاح على ${answeredCorrectly.size} من أصل ${questions.length} أسئلة ممتعة!`;
+          AppState.spawnConfetti(window.innerWidth / 2, window.innerHeight / 2, 30);
+          SoundFX.playChime();
+        }
+      });
+
+      quizRestartBtn.addEventListener('click', () => {
+        SoundFX.playPop(520, 0.1);
+        currentIdx = 0;
+        answeredCorrectly.clear();
+        renderQuestion();
+      });
+
+      renderQuestion();
+    })();
+  </script>
+</body>
+</html>
